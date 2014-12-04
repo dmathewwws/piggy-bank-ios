@@ -7,17 +7,53 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate  {
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func sendSMS(sender: AnyObject) {
+        
+        let sendSMSController = MFMessageComposeViewController()
+        
+        sendSMSController.body = "This is a test!"
+        sendSMSController.recipients = ["1-604-337-1167"]
+        sendSMSController.messageComposeDelegate = self
+        
+        self.presentViewController(sendSMSController, animated: true, completion: nil)
+        
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        
+        switch result.value{
+            case MessageComposeResultCancelled.value, MessageComposeResultFailed.value:
+                self.dismissViewControllerAnimated(true, completion: {
+                    let alertController = UIAlertController(title: "Sorry!", message: "The text message could not be sent. Please try again at a later time.", preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                })
+            case MessageComposeResultSent.value:
+                self.dismissViewControllerAnimated(true, completion: {
+                    let successViewController:SMSSuccesViewController = UIStoryboard(name: "MainApp", bundle:NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SMSSuccesViewController") as SMSSuccesViewController
+                    self.presentViewController(successViewController, animated: true, completion: nil)
+                })
+            default:
+                break
+        }
+        
     }
 
 
