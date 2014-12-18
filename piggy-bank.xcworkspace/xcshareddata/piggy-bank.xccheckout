@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>35605A53-52BB-4677-8E87-0AF9F52F3A3C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>piggy-bank</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4ACE79B505E717A9EE358A0B33E94E657DEE2E1F</key>
+		<string>https://github.com/dmathewwws/piggy-bank-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>piggy-bank.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4ACE79B505E717A9EE358A0B33E94E657DEE2E1F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dmathewwws/piggy-bank-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4ACE79B505E717A9EE358A0B33E94E657DEE2E1F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4ACE79B505E717A9EE358A0B33E94E657DEE2E1F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>piggy-bank</string>
+		</dict>
+	</array>
+</dict>
+</plist>

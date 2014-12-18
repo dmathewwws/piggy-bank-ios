@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81D1A34CC54A54307AB33DE5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5016A20CFB0C24D04F7FB9EE /* libPods.a */; };
 		AF68FC7B1A2FB17200853A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68FC7A1A2FB17200853A77 /* AppDelegate.swift */; };
 		AF68FC7D1A2FB17200853A77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68FC7C1A2FB17200853A77 /* ViewController.swift */; };
 		AF68FC801A2FB17200853A77 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF68FC7E1A2FB17200853A77 /* Register.storyboard */; };
@@ -29,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31C97CAE7FF6AF151FAB2B02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5016A20CFB0C24D04F7FB9EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF21F8BC1A4398E900C22696 /* piggy-bank-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "piggy-bank-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF68FC751A2FB17200853A77 /* piggy-bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "piggy-bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF68FC791A2FB17200853A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF68FC7A1A2FB17200853A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,7 @@
 		AF68FC9A1A2FC81E00853A77 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AF68FC9F1A2FE8CA00853A77 /* MainApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		AF68FCA11A2FEB9400853A77 /* SMSSuccesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSSuccesViewController.swift; sourceTree = "<group>"; };
+		E5357049257B26A1E159C161 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF68FC9B1A2FC81F00853A77 /* MessageUI.framework in Frameworks */,
+				81D1A34CC54A54307AB33DE5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D8E5B0E8CE62F4A8A96937A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31C97CAE7FF6AF151FAB2B02 /* Pods.debug.xcconfig */,
+				E5357049257B26A1E159C161 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF68FC6C1A2FB17200853A77 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +85,7 @@
 				AF68FC9C1A2FC83000853A77 /* Frameworks */,
 				AF68FC8D1A2FB17300853A77 /* piggy-bankTests */,
 				AF68FC761A2FB17200853A77 /* Products */,
+				4D8E5B0E8CE62F4A8A96937A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +109,7 @@
 				AF68FC811A2FB17200853A77 /* Images.xcassets */,
 				AF68FC831A2FB17200853A77 /* LaunchScreen.xib */,
 				AF68FC781A2FB17200853A77 /* Supporting Files */,
+				AF21F8BC1A4398E900C22696 /* piggy-bank-Bridging-Header.h */,
 			);
 			path = "piggy-bank";
 			sourceTree = "<group>";
@@ -126,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				AF68FC9A1A2FC81E00853A77 /* MessageUI.framework */,
+				5016A20CFB0C24D04F7FB9EE /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF68FC941A2FB17300853A77 /* Build configuration list for PBXNativeTarget "piggy-bank" */;
 			buildPhases = (
+				86024949A488C4B004D8FC6D /* Check Pods Manifest.lock */,
 				AF68FC711A2FB17200853A77 /* Sources */,
 				AF68FC721A2FB17200853A77 /* Frameworks */,
 				AF68FC731A2FB17200853A77 /* Resources */,
+				C917CFCB2A1CEAB377919FB0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,6 +246,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86024949A488C4B004D8FC6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C917CFCB2A1CEAB377919FB0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF68FC711A2FB17200853A77 /* Sources */ = {
@@ -355,8 +408,10 @@
 		};
 		AF68FC951A2FB17300853A77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31C97CAE7FF6AF151FAB2B02 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "piggy-bank/Info.plist";
@@ -364,13 +419,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "piggy-bank/piggy-bank-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		AF68FC961A2FB17300853A77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5357049257B26A1E159C161 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "piggy-bank/Info.plist";
@@ -378,6 +437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "piggy-bank/piggy-bank-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -434,6 +494,7 @@
 				AF68FC961A2FB17300853A77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF68FC971A2FB17300853A77 /* Build configuration list for PBXNativeTarget "piggy-bankTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +503,7 @@
 				AF68FC991A2FB17300853A77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
