@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xYV-n0-fhh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,44 +19,65 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify your phone number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4J-5p-5un">
-                                <rect key="frame" x="31" y="140" width="538" height="21"/>
+                                <rect key="frame" x="31" y="160" width="538" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bof-BW-5C0">
-                                <rect key="frame" x="266" y="420" width="69" height="30"/>
-                                <state key="normal" title="Let's do it">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="266" y="570" width="69" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="sendSMS:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P2D-SK-75H"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-Qc-n4w">
-                                <rect key="frame" x="252" y="257" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Phf-Qc-n4w">
+                                <rect key="frame" x="31" y="272" width="538" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Bof-BW-5C0" secondAttribute="bottom" multiplier="4:3" id="N5g-eN-7xa"/>
-                            <constraint firstAttribute="centerX" secondItem="l4J-5p-5un" secondAttribute="centerX" id="eFd-GA-1mE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l4J-5p-5un" secondAttribute="trailing" priority="750" constant="15" id="eXh-KM-AN8"/>
-                            <constraint firstAttribute="centerX" secondItem="Bof-BW-5C0" secondAttribute="centerX" id="ilq-i2-fwB"/>
-                            <constraint firstItem="jyV-Pf-zRb" firstAttribute="bottom" secondItem="l4J-5p-5un" secondAttribute="top" multiplier="5:35" id="ukx-Yg-oki"/>
-                            <constraint firstItem="l4J-5p-5un" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="750" constant="15" id="wDY-TM-bA0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l4J-5p-5un" secondAttribute="trailing" priority="750" constant="15" id="1HB-K8-Ijp"/>
+                            <constraint firstAttribute="centerX" secondItem="Phf-Qc-n4w" secondAttribute="centerX" id="4Gr-Lj-Kku"/>
+                            <constraint firstAttribute="centerX" secondItem="l4J-5p-5un" secondAttribute="centerX" id="4QU-Zz-19v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Phf-Qc-n4w" secondAttribute="trailing" constant="15" id="C2E-e1-4gN"/>
+                            <constraint firstItem="l4J-5p-5un" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" priority="750" constant="15" id="G96-aW-CuZ"/>
+                            <constraint firstItem="Phf-Qc-n4w" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="HGv-wc-vYJ"/>
+                            <constraint firstItem="Phf-Qc-n4w" firstAttribute="top" secondItem="l4J-5p-5un" secondAttribute="bottom" multiplier="1.5:1" id="ZvC-Ww-Aif">
+                                <variation key="widthClass=compact" constant="-15.5"/>
+                            </constraint>
+                            <constraint firstItem="l4J-5p-5un" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" multiplier="2.5:1" id="uVa-xj-JrV">
+                                <variation key="widthClass=compact" constant="-38"/>
+                            </constraint>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="c1L-2D-otd">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="EdS-RD-tKv">
+                            <connections>
+                                <action selector="sendSMSController:" destination="vXZ-lx-hvc" id="tDS-nD-eMN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="nextButton" destination="EdS-RD-tKv" id="ffJ-UY-sHe"/>
+                        <outlet property="phoneNumberTF" destination="Phf-Qc-n4w" id="9cS-qc-VAy"/>
                         <outlet property="verifyLabel" destination="l4J-5p-5un" id="r7a-xr-Izr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="396"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iIQ-Ej-JlY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xYV-n0-fhh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vmc-MZ-bAo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="dnk-pk-uuS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NuZ-Ry-gak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="196" y="396"/>
         </scene>

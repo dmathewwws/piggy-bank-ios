@@ -8,17 +8,23 @@
 
 import UIKit
 import MessageUI
+import Foundation
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITextFieldDelegate  {
     
     @IBOutlet weak var verifyLabel: UILabel!
+    @IBOutlet weak var phoneNumberTF: UITextField!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     
-    
+    var phoneUtil:NBPhoneNumberUtil = NBPhoneNumberUtil.sharedInstance()
+    var phoneTypeFormatter:NBAsYouTypeFormatter = NBAsYouTypeFormatter(regionCode: "CA")
+    //var userDict = Dictionary<NSObject, AnyObject>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
+        phoneNumberTF.delegate = self
+        phoneNumberTF.becomeFirstResponder()
         
     }
 
@@ -27,15 +33,18 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sendSMS(sender: AnyObject) {
+    @IBAction func sendSMSController(sender: AnyObject) {
         
         if(MFMessageComposeViewController.canSendText()){
-            
             verifyLabel.text = ""
+            
+            let deviceID = UIDevice().identifierForVendor.UUIDString
+            let verificationCode = getNewVerificationCode()
+            let
             
             let sendSMSController = MFMessageComposeViewController()
             
-            sendSMSController.body = "With verification code: XXXX-YYYY-ZZZZ"
+            sendSMSController.body = "With verification code: \(verificationCode)"
             sendSMSController.recipients = ["1-604-337-1167"]
             sendSMSController.messageComposeDelegate = self
             
@@ -68,7 +77,81 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
         
     }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        var error: NSError?
+        
+        if string != ""{
+            if let myNumber:NBPhoneNumber = phoneUtil.parse(textField.text+string, defaultRegion: "CA", error: &error){
+               
+                if phoneUtil.isValidNumberForRegion(myNumber, regionCode: "CA"){
+                    println("\(textField.text)+\(string) is valid")
+                    nextButton.enabled=true
+                }else{
+                    println("\(textField.text)+\(string) is invalid")
+                    nextButton.enabled=false
+                }
+            }
+        }else{
+            var countTextField = countElements(textField.text)
+            if let myNumber:NBPhoneNumber = phoneUtil.parse(textField.text[0..<(countTextField-1)], defaultRegion: "CA", error: &error){
+                
+                if phoneUtil.isValidNumberForRegion(myNumber, regionCode: "CA"){
+                    println("\(myNumber.nationalNumber) is valid")
+                    nextButton.enabled=true
+                }else{
+                    println("\(myNumber.nationalNumber) is valid")
+                    nextButton.enabled=false
+                }
+            
+            }else{
+                nextButton.enabled = false
+            }
+        }
+        
+        /*if (error == nil){
+            println("\(textField.text) is \(phoneUtil.isValidNumber(myNumber))")
+        }*/
+        
+        
+//        var phoneStr = textField.text as NSString
+//        
+//        if (string != ""){
+//            phoneStr = phoneStr.stringByReplacingCharactersInRange(range, withString: "")
+//            textField.text = phoneTypeFormatter.inputDigit(string)
+//
+//        }else{
+//            textField.text = phoneTypeFormatter.removeLastDigit()
+//        }
+//        
+
+        
+        
+        
+//        var phoneStr = textField.text as NSString
+//        phoneStr = phoneStr.stringByReplacingCharactersInRange(range, withString: "")
+//        println("Text in  shouldChangeCharactersInRange is \(phoneStr)")
+        
+        return true
+    }
+
+}
+
+func getNewVerificationCode() -> String{
+    
+    return NSUUID().UUIDString
+}
 
 
+extension String {
+    subscript (i: Int) -> String {
+        return String(Array(self)[i])
+    }
+    subscript (r: Range<Int>) -> String {
+        var start = advance(startIndex, r.startIndex)
+        var end = advance(startIndex, r.endIndex)
+        return substringWithRange(Range(start: start, end: end))
+    }
 }
 
